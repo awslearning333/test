@@ -1,19 +1,19 @@
-version: 2.0
+version: 0.2
+env:
+  variables:
+    test: "yes"
+    environment: "production"
 
 phases:
   install:
     commands:
-      - echo " install nginx"
-      - sudo apt update
-      - sudo apt install nginx -y
+      echo 'installing'
+  pre_build:
+    commands:
+      echo 'pre-build'
   build:
     commands:
-      - echo build start on 'date'
-      - cp index.html /var/www/html/
+      echo 'build'
   post_build:
     commands:
-      - echo "nginxconfigurationdone"
-      
-artifacts:
-  files:
-    - /var/www /html/index.html
+      echo 'post build'
